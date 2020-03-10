@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyBase</string>
+    <bool name="is_tab">false</bool>
+
+    <string name="text_camera">相机展示</string>
+    <string name="text_bezier">贝塞尔曲线展示</string>
+    <string name="text_camera_abridge">缩略图</string>
+    <string name="text_camera_self">原图</string>
+    <string name="text_start">起始页内容</string>
+
+    <string name="image_des_test">测试</string>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 透明样式 -->
+    <style name="protect_transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@mipmap/start_img_phone</item>
+        <!-- 8.0 闪退 报错Only fullscreen opaque activities can request orientation
+         https://blog.csdn.net/na2609613672/article/details/89403053 -->
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+</resources>
