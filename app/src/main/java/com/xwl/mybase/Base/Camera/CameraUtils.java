@@ -97,20 +97,20 @@ public class CameraUtils {
 	 * */
 	public Bitmap getBitmap(int requestCode,int resultCode,Intent data) {
 		Bitmap bitmap = null;
-		if(requestCode==CAMERA_REQUEST_CODE_PHOTO_ABRIDGE&&resultCode==RESULT_OK){
+		if(requestCode == CAMERA_REQUEST_CODE_PHOTO_ABRIDGE && resultCode == RESULT_OK){
 			/*缩略图信息是储存在返回的intent中的Bundle中的，
 			 * 对应Bundle中的键为data，因此从Intent中取出
 			 * Bundle再根据data取出来Bitmap即可*/
 			Bundle extras = data.getExtras();
 			if (extras != null) {
 				bitmap = (Bitmap) extras.get("data");
-				try {
-					/*如果拍照成功，将Uri用BitmapFactory的decodeStream方法转为Bitmap*/
-					bitmap = BitmapFactory.decodeStream(activity.getContentResolver().openInputStream(mImageUri));
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
-
+			}
+		} else if (requestCode == CAMERA_REQUEST_CODE_PHOTO_SELF && resultCode == RESULT_OK) {
+			try {
+				/*如果拍照成功，将Uri用BitmapFactory的decodeStream方法转为Bitmap*/
+				bitmap = BitmapFactory.decodeStream(activity.getContentResolver().openInputStream(mImageUri));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
 			}
 		}
 		destroy();

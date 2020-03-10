@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:allowBackup">/
+        tools:replace="android:allowBackup">
 
         <activity android:name=".Start.StartActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
