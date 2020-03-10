@@ -1,7 +1,8 @@
-package com.xwl.mybase.Base;
+package com.xwl.mybaselib.Base;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -10,23 +11,13 @@ import android.util.Log;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Application extends android.app.Application {
+public class BaseApplication {
 
 	public static List<Activity> activityList = new LinkedList<>();
 	public static Application application;
 
-	@Override
-	protected void attachBaseContext(Context base) {
-		super.attachBaseContext(base);
-	}
-
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		application = this;
-	}
-
-	public Application() {
+	public BaseApplication(Application application) {
+		this.application = application;
 	}
 
 	public static void addActivity(Activity activity) {

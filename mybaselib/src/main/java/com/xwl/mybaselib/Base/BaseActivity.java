@@ -1,10 +1,10 @@
-package com.xwl.mybase.Base;
+package com.xwl.mybaselib.Base;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import com.gyf.immersionbar.ImmersionBar;
-import com.xwl.mybase.Base.Permission.BasePermissionActivity;
+import com.xwl.mybaselib.Base.Permission.BasePermissionActivity;
 
 /**
  * BasePermissionActivity 实现权限接口
@@ -19,7 +19,7 @@ public class BaseActivity extends BasePermissionActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// 添加每一个Activity到List中
-		Application.addActivity(this);
+		BaseApplication.addActivity(this);
 
 		// 状态栏
 		mImmersionBar = ImmersionBar.with(this);
@@ -46,7 +46,7 @@ public class BaseActivity extends BasePermissionActivity {
 	@Override
 	protected void onDestroy() {
 		// 移除每一个Activity
-		Application.removeActivity(this);
+		BaseApplication.removeActivity(this);
 		super.onDestroy();
 	}
 }

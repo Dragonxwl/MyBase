@@ -1,4 +1,4 @@
-package com.xwl.mybase.Base.Camera;
+package com.xwl.mybaselib.Base.Camera;
 
 import permissions.dispatcher.PermissionRequest;
 

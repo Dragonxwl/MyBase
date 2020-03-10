@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.xwl.mybase.Base.Application;
-import com.xwl.mybase.Base.BaseActivity;
+import com.xwl.mybaselib.Base.BaseActivity;
 import com.xwl.mybase.BezierShow.BezierActivity;
 import com.xwl.mybase.CameraShow.CameraShowActivity;
 import com.xwl.mybase.R;
+import com.xwl.mybaselib.Base.BaseApplication;
 
 public class MainActivity extends BaseActivity {
 
@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity {
 			exitTime = System.currentTimeMillis();
 		} else {
 			super.onBackPressed();
-			Application.exit();
+			BaseApplication.exit();
 		}
 	}
 }

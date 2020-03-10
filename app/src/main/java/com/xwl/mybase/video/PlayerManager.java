@@ -20,7 +20,7 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DataSpec;
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.upstream.RawResourceDataSource;
-import com.xwl.mybase.Base.Application;
+import com.xwl.mybaselib.Base.BaseApplication;
 
 public class PlayerManager implements Player.EventListener {
 
@@ -68,7 +68,7 @@ public class PlayerManager implements Player.EventListener {
 				trackSelector = new DefaultTrackSelector(trackSelectionFactory);
 				trackSelector.setParameters(trackSelectorParameters);
 
-				player = ExoPlayerFactory.newSimpleInstance(Application.getContext(), trackSelector);
+				player = ExoPlayerFactory.newSimpleInstance(BaseApplication.getContext(), trackSelector);
 				player.setPlayWhenReady(playWhenReady);
 				player.addListener(this);
 			}
@@ -86,13 +86,13 @@ public class PlayerManager implements Player.EventListener {
 			trackSelector = new DefaultTrackSelector(trackSelectionFactory);
 			trackSelector.setParameters(trackSelectorParameters);
 
-			player = ExoPlayerFactory.newSimpleInstance(Application.getContext(), trackSelector);
+			player = ExoPlayerFactory.newSimpleInstance(BaseApplication.getContext(), trackSelector);
 			player.setPlayWhenReady(playWhenReady);
 			player.addListener(this);
 		}
 		if (rawId != 0) {
 			DataSpec dataSpec = new DataSpec(RawResourceDataSource.buildRawResourceUri(rawId));
-			RawResourceDataSource rawResourceDataSource = new RawResourceDataSource(Application.getContext());
+			RawResourceDataSource rawResourceDataSource = new RawResourceDataSource(BaseApplication.getContext());
 			try {
 				rawResourceDataSource.open(dataSpec);
 				DataSource.Factory factory = () -> rawResourceDataSource;

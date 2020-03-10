@@ -1,6 +1,6 @@
 package com.xwl.mybase.BezierShow;
 
-import com.xwl.mybase.Base.BaseActivity;
+import com.xwl.mybaselib.Base.BaseActivity;
 import com.xwl.mybase.R;
 
 public class BezierActivity extends BaseActivity {

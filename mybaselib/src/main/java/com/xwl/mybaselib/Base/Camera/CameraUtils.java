@@ -1,4 +1,4 @@
-package com.xwl.mybase.Base.Camera;
+package com.xwl.mybaselib.Base.Camera;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.provider.MediaStore;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
-import com.xwl.mybase.BuildConfig;
+import com.xwl.mybaselib.Base.BaseApplication;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,8 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static android.app.Activity.RESULT_OK;
-import static com.xwl.mybase.Base.IntentRequestCode.CAMERA_REQUEST_CODE_PHOTO_ABRIDGE;
-import static com.xwl.mybase.Base.IntentRequestCode.CAMERA_REQUEST_CODE_PHOTO_SELF;
+import static com.xwl.mybaselib.Base.IntentRequestCode.CAMERA_REQUEST_CODE_PHOTO_ABRIDGE;
+import static com.xwl.mybaselib.Base.IntentRequestCode.CAMERA_REQUEST_CODE_PHOTO_SELF;
 
 public class CameraUtils {
 
@@ -54,7 +54,7 @@ public class CameraUtils {
 			if(imageFile!=null){
 				if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N){
 					/*7.0以上要通过FileProvider将File转化为Uri*/
-					mImageUri = FileProvider.getUriForFile(activity, BuildConfig.APPLICATION_ID + ".fileProvider",imageFile);
+					mImageUri = FileProvider.getUriForFile(activity, BaseApplication.application.getPackageName() + ".fileProvider",imageFile);
 				}else {
 					/*7.0以下则直接使用Uri的fromFile方法将File转化为Uri*/
 					mImageUri = Uri.fromFile(imageFile);

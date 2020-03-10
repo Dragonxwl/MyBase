@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.xwl.mybase.Base.BaseActivity;
-import com.xwl.mybase.Base.Camera.CameraUtils;
+import com.xwl.mybaselib.Base.BaseActivity;
+import com.xwl.mybaselib.Base.Camera.CameraUtils;
 import com.xwl.mybase.R;
 
 public class CameraShowActivity extends BaseActivity {
@@ -50,13 +50,14 @@ public class CameraShowActivity extends BaseActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// 判断返回是属于相册的
+		super.onActivityResult(requestCode, resultCode, data);
 		if (cameraUtils.isCamera(requestCode)) {
 			// 获取bitmap
-			Bitmap bitmap = cameraUtils.getBitmap(requestCode,resultCode,data);
+			Bitmap bitmap = cameraUtils.getBitmap(requestCode, resultCode, data);
 			if (bitmap != null) {
 				imageView.setImageBitmap(bitmap);
 			} else {
-				Toast.makeText(this,"图片获取失败",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, "图片获取失败", Toast.LENGTH_SHORT).show();
 			}
 			cameraUtils = null;
 		}

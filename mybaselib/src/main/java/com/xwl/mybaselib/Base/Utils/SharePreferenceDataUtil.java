@@ -1,4 +1,4 @@
-package com.xwl.mybase.Base.Utils;
+package com.xwl.mybaselib.Base.Utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

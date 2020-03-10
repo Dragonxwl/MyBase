@@ -1,7 +1,7 @@
-package com.xwl.mybase.Base.Config;
+package com.xwl.mybaselib.Base.Config;
 
-import com.xwl.mybase.Base.Application;
-import com.xwl.mybase.Base.Utils.SharePreferenceDataUtil;
+import com.xwl.mybaselib.Base.BaseApplication;
+import com.xwl.mybaselib.Base.Utils.SharePreferenceDataUtil;
 
 public class myConfig {
 	private static myConfig instance = null;
@@ -19,7 +19,7 @@ public class myConfig {
 	private static final String IS_MY_SHOWTAB = "isMyShowTab";
 
 	public int getAndroidShowTab() {
-		return SharePreferenceDataUtil.getSharedIntData(Application.getContext(), IS_SHOWTAB);
+		return SharePreferenceDataUtil.getSharedIntData(BaseApplication.getContext(), IS_SHOWTAB);
 	}
 
 	/*public void setAndroidShowTab(int androidShowTab) {
@@ -27,7 +27,7 @@ public class myConfig {
 	}*/
 
 	public boolean getIsMyShowTab() {
-		return SharePreferenceDataUtil.getSharedBooleanData(Application.getContext(), IS_MY_SHOWTAB, true);
+		return SharePreferenceDataUtil.getSharedBooleanData(BaseApplication.getContext(), IS_MY_SHOWTAB, true);
 	}
 
 	/*public void setIsMyShowTab(boolean isMyShowTab) {

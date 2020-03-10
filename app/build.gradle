@@ -32,16 +32,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    //运行时权限  https://github.com/permissions-dispatcher/PermissionsDispatcher
-    implementation "org.permissionsdispatcher:permissionsdispatcher:4.6.0"
-    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.6.0"
-
-    // 状态栏 沉浸式 https://github.com/gyf-dev/ImmersionBar
-    api 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'
-
     // exoplayer https://github.com/google/ExoPlayer
     implementation 'com.google.android.exoplayer:exoplayer:2.11.3'
 
     // 内存泄漏检测 https://github.com/square/leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
+    implementation project(path: ':mybaselib')
 }

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyBaseLib</string>
+    <bool name="is_tab">false</bool>
+</resources>

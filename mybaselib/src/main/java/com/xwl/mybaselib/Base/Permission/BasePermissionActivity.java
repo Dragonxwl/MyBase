@@ -1,11 +1,11 @@
-package com.xwl.mybase.Base.Permission;
+package com.xwl.mybaselib.Base.Permission;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xwl.mybase.Base.Camera.CameraPermissionInterface;
+import com.xwl.mybaselib.Base.Camera.CameraPermissionInterface;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
