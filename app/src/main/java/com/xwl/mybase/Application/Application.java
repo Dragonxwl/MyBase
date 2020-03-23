@@ -1,16 +1,11 @@
 package com.xwl.mybase.Application;
 
-import android.app.Activity;
 import android.content.Context;
 
 import com.xwl.mybaselib.Base.BaseApplication;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Application extends android.app.Application {
 
-	public static List<Activity> activityList = new LinkedList<>();
 	public static Application application;
 	public static BaseApplication baseApplication;
 
